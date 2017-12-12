@@ -1,4 +1,4 @@
-package empire.m.room;
+package empire.m.room.data;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
@@ -10,7 +10,7 @@ import android.content.Context;
  * Code and Life ( ^ .,,. ^ )
  * ---------------------------------------------
  */
-@Database(entities = {CoinDTO.class}, version = 1)
+@Database(entities = {ItemValue.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase INSTANCE;
     public static String DATABASE_NAME = "AppDatabase";
@@ -22,7 +22,7 @@ public abstract class AppDatabase extends RoomDatabase {
             INSTANCE = Room.databaseBuilder(context,
                     AppDatabase.class, DATABASE_NAME)
                     //day la demo can remove dong nay ra va thuc hien query bat dong bo asynctask hoac thread
-                    .allowMainThreadQueries()
+                    //.allowMainThreadQueries()
                     .build();
 
         }
